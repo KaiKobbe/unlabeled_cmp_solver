@@ -1,8 +1,17 @@
 # Optimal Solver for Makespan-Optimal Coordinated Motion Planning for Unlabeled Robots in Graphs
 
+This package provides a solver for makespan-optimal coordinated motion planning given unlabeled robots in arbitrary graphs.
+The decision problem of whether a schedule with makespan M exists is polynomial-time solvable by applying a reduction to maximum s-t-flow with unit capacities, introduced by Yu and LaValle:
+[Multi-agent Path Planning and Network Flow](https://doi.org/10.1007/978-3-642-36279-8_10), Algorithmic Foundations of Robotics, 2013
+A binary search over the possible makespan values will then yield the optimal solution.
+
 ## Problem Description
-
-
+Consider a simple and connected graph $G = (V,E)$ with a set of start positions $S \subseteq V$, and target positions $T \subseteq V$.
+We assume $|S| \leq |T|$.
+The goal is to move all robots from their start positions to distinct target positions in as few timesteps as possible.
+Robots are unlabeled, meaning any robot may occupy any target position.
+At each timestep, every robot may either move to an adjacent vertex or stay in place.
+No two robots may occupy the same vertex at the same time, and no two robots may swap positions in a single timestep.
 
 ## Installation
 It should be easy to install the solver using the following command:
@@ -13,7 +22,6 @@ pip install --verbose git+https://github.com/KaiKobbe/unlabeled_cmp_solver
 
 ## Max-Flow Reduction by Yu and LaValle
 Consider an instance of unlabeled coordinated motion planning on a graph $G = (V,E)$ with a set of start positions $S \subseteq V$, and target positions $T \subseteq V$.
-We assume $|S| \leq |T|$.
 The reduction solves the decision problem of whether a feasible schedule of makespan $M$ exists.
 
 We construct a time-expanded network $G'$ as follows.
