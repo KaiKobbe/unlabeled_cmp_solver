@@ -2,7 +2,7 @@
 
 This package provides a solver for makespan-optimal coordinated motion planning given unlabeled robots in arbitrary graphs.
 The decision problem of whether a schedule with makespan M exists is polynomial-time solvable by applying a reduction to maximum s-t-flow with unit capacities, introduced by Yu and LaValle:
-[Multi-agent Path Planning and Network Flow](https://doi.org/10.1007/978-3-642-36279-8_10), Algorithmic Foundations of Robotics, 2013
+[Multi-agent Path Planning and Network Flow](https://doi.org/10.1007/978-3-642-36279-8_10), Algorithmic Foundations of Robotics, 2013.
 A binary search over the possible makespan values will then yield the optimal solution.
 
 ## Problem Description
